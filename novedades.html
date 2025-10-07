@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Novedades - BA Style</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link href="assets/css/styles.css" rel="stylesheet">
+  </head>
+  <body class="bg-light">
+    <header class="shadow-sm bg-ml-yellow">
+      <nav class="navbar navbar-expand-lg navbar-dark container-lg py-3">
+        <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="index.html">
+          <img class="logo-badge" src="assets/imagenes/BAStyle.png" width="40" height="40" alt="BA Style">
+          <span>BA Style</span>
+        </a>
+        <div class="ms-auto d-flex gap-2">
+          <a class="btn btn-outline-secondary" href="catalog.html?cat=remeras">Remeras</a>
+          <a class="btn btn-outline-secondary" href="catalog.html?cat=shorts">Shorts</a>
+          <a class="btn btn-outline-secondary" href="catalog.html?cat=pantalones">Pantalones</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-lg py-4">
+      <div class="row g-4 align-items-center">
+        <div class="col-12 col-lg-6">
+          <img src="assets/imagenes/BAStyle.png" alt="BA Style" class="w-100 p-4 bg-dark rounded-3" style="object-fit:contain; height:260px">
+        </div>
+        <div class="col-12 col-lg-6">
+          <h1 class="h3 mb-2">BA Style</h1>
+          <p class="text-muted mb-3">Somos una marca urbana de <b>zona La Plata</b> que trae lo último en remeras, shorts y pantalones, con <b>precios justos</b> y calidad real. Coordinamos por WhatsApp y entregamos por <b>punto de encuentro en La Plata y alrededores</b>.</p>
+          <ul class="list-unstyled mb-3">
+            <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i>Diseños propios y clásicos básicos</li>
+            <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i>Telas cómodas y resistentes</li>
+            <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i>Transferencia y efectivo</li>
+          </ul>
+          <div class="d-flex flex-wrap gap-2">
+            <a class="btn btn-dark" href="catalog.html?cat=remeras"><i class="bi bi-collection me-1"></i>Ver catálogo</a>
+            <a class="btn btn-outline-dark" href="mailto:ventasUrban@proton.me?subject=Consulta%20BA%20Style"><i class="bi bi-envelope me-1"></i>Contactar por email</a>
+            <a id="ctaWhatsApp" class="btn btn-success" target="_blank" rel="noopener"><i class="bi bi-whatsapp me-1"></i>Escribir por WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <section class="mt-5">
+        <h2 class="h5">Últimas novedades</h2>
+        <p class="text-muted">Próximos ingresos, restocks y ediciones limitadas. Seguinos y volvé pronto para ver lo nuevo.</p>
+        <div class="row g-3 row-cols-2 row-cols-md-3 row-cols-lg-4">
+          <div class="col"><div class="card product-card"><img class="product-thumb" src="https://picsum.photos/seed/new-1/800/600" alt="Novedad 1"></div></div>
+          <div class="col"><div class="card product-card"><img class="product-thumb" src="https://picsum.photos/seed/new-2/800/600" alt="Novedad 2"></div></div>
+          <div class="col"><div class="card product-card"><img class="product-thumb" src="https://picsum.photos/seed/new-3/800/600" alt="Novedad 3"></div></div>
+          <div class="col"><div class="card product-card"><img class="product-thumb" src="https://picsum.photos/seed/new-4/800/600" alt="Novedad 4"></div></div>
+        </div>
+      </section>
+    </main>
+
+    <a id="whatsappBtn" href="#" target="_blank" rel="noopener" class="whatsapp-fab" aria-label="WhatsApp">
+      <i class="bi bi-whatsapp"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      const phone = '5491112345678'; // mismo número que en app.js
+      const msg = encodeURIComponent('Hola BA Style! Quiero conocer las novedades.');
+      const wa = `https://wa.me/${phone}?text=${msg}`;
+      document.getElementById('ctaWhatsApp').href = wa;
+      document.getElementById('whatsappBtn').href = wa;
+    </script>
+  </body>
+  </html>
+
+
