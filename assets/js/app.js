@@ -1,5 +1,5 @@
 // Sample product catalog (AI placeholder images)
-const PRODUCTS = [
+let PRODUCTS = [
   {
     id: 'rem-001',
     title: 'Remera BA Street Blanca',
@@ -78,6 +78,21 @@ function formatPrice(n) {
   return new Intl.NumberFormat('es-AR').format(n);
 }
 
+const IMAGE_FALLBACK = {
+  remeras: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1200&q=60',
+  shorts: 'https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=1200&q=60',
+  pantalones: 'https://images.unsplash.com/photo-1516826957135-700dedea698c?auto=format&fit=crop&w=1200&q=60',
+  default: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1200&q=60'
+};
+
+function normalize(str) {
+  return (str || '')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .trim();
+}
+
 function computeSubtotal(items) {
   return items.reduce((sum, it) => sum + it.price * it.quantity, 0);
 }
@@ -108,9 +123,9 @@ function loadCart() {
 }
 
 function updateCartBadge() {
-  const badge = document.getElementById('cartBadge');
   const count = cart.reduce((acc, it) => acc + it.quantity, 0);
-  badge.textContent = String(count);
+  const badges = Array.from(document.querySelectorAll('#cartBadge, .cart-badge'));
+  badges.forEach(b => { if (b) b.textContent = String(count); });
 }
 
 function renderCart() {
@@ -205,9 +220,10 @@ function addToCart(product, size, quantity) {
   if (window.Swal) {
     const d = computeBulkDiscount(cart);
     const extra = d.amount ? `<br><small>Se aplicó <b>${d.label}</b></small>` : '';
+    const totalItems = cart.reduce((acc, it) => acc + it.quantity, 0);
     Swal.fire({
       title: 'Agregado al carrito',
-      html: `${product.title} - Talla <b>${size}</b>${extra}`,
+      html: `${product.title} - Talla <b>${size}</b>${extra}<br><small>Total en carrito: <b>${totalItems}</b> ítem(s)</small>`,
       icon: 'success',
       timer: 1600,
       showConfirmButton: false
@@ -221,7 +237,7 @@ function createProductCard(product) {
   col.className = 'col';
   col.innerHTML = `
     <div class="card product-card h-100">
-      <img src="${product.image}" class="card-img-top product-thumb" alt="${product.title}" data-open-modal="${product.id}">
+      <img src="${product.image}" class="card-img-top product-thumb" alt="${product.title}" data-open-modal="${product.id}" onerror="this.onerror=null;this.src='${IMAGE_FALLBACK[product.category]||IMAGE_FALLBACK.default}'">
       <div class="card-body d-flex flex-column">
         <h3 class="h6 card-title">${product.title}</h3>
         <div class="mt-auto">
@@ -237,6 +253,13 @@ function createProductCard(product) {
 function renderGrid(items) {
   const grid = document.getElementById('productsGrid');
   grid.innerHTML = '';
+  if (!items.length) {
+    const col = document.createElement('div');
+    col.className = 'col-12';
+    col.innerHTML = '<div class="p-4 text-center border rounded-3 bg-white">No se encontraron productos</div>';
+    grid.appendChild(col);
+    return;
+  }
   items.forEach((p) => grid.appendChild(createProductCard(p)));
 }
 
@@ -268,14 +291,58 @@ function openProductModal(productId) {
 
   const modal = new bootstrap.Modal(document.getElementById('productModal'));
   modal.show();
+
+  // Inject Product JSON-LD for SEO
+  try {
+    const existing = document.getElementById('jsonld-product');
+    if (existing) existing.remove();
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.id = 'jsonld-product';
+    const data = {
+      '@context': 'https://schema.org',
+      '@type': 'Product',
+      name: product.title,
+      description: product.description,
+      image: product.image,
+      brand: { '@type': 'Brand', name: 'BA Style' },
+      offers: {
+        '@type': 'Offer',
+        priceCurrency: 'ARS',
+        price: String(product.price),
+        availability: 'https://schema.org/InStock'
+      }
+    };
+    script.textContent = JSON.stringify(data);
+    document.body.appendChild(script);
+  } catch (_) { /* ignore */ }
 }
 
 // Search and filters
 function applySearch(term) {
-  const t = term.trim().toLowerCase();
+  const t = normalize(term);
   if (!t) { renderGrid(PRODUCTS); return; }
+  // Mapear búsquedas por categoría
+  if (/(^|\s)(remera|remeras)(\s|$)/.test(t)) {
+    // Navegar al catálogo de remeras
+    window.location.href = 'catalog.html?cat=remeras';
+    return;
+  }
+  if (/(^|\s)(short|shorts)(\s|$)/.test(t)) {
+    window.location.href = 'catalog.html?cat=shorts';
+    return;
+  }
+  if (/(^|\s)(pantalon|pantalones)(\s|$)/.test(t)) {
+    window.location.href = 'catalog.html?cat=pantalones';
+    return;
+  }
+  if (/(^|\s)(oferta|ofertas)(\s|$)/.test(t)) {
+    window.location.href = 'catalog.html?cat=ofertas';
+    return;
+  }
+  // Búsqueda por texto en título/descripcion
   const filtered = PRODUCTS.filter((p) =>
-    p.title.toLowerCase().includes(t) || p.description.toLowerCase().includes(t)
+    normalize(p.title).includes(t) || normalize(p.description).includes(t)
   );
   renderGrid(filtered);
 }
@@ -283,8 +350,38 @@ function applySearch(term) {
 // Events
 document.addEventListener('DOMContentLoaded', () => {
   // Initial render
-  renderGrid(PRODUCTS);
+  // Try load from products.json
+  fetch('products.json').then(r=>r.ok?r.json():Promise.reject()).then(data=>{
+    if (Array.isArray(data) && data.length) {
+      PRODUCTS = data;
+    }
+    try { window.PRODUCTS_READY = true; window.dispatchEvent(new Event('productsReady')); } catch(_){}
+    if (!window.CATALOG_FILTER_MODE) {
+      let limit = 8;
+      try {
+        const w = window.innerWidth;
+        if (w < 768) limit = 4;          // mobile
+        else if (w < 1200) limit = 6;    // tablet
+        else limit = 8;                  // desktop
+      } catch(_){}
+      const items = window.HOME_TOP4 ? PRODUCTS.slice(0, limit) : PRODUCTS;
+      renderGrid(items);
+    }
+  }).catch(()=>{
+    try { window.PRODUCTS_READY = true; window.dispatchEvent(new Event('productsReady')); } catch(_){}
+    if (!window.CATALOG_FILTER_MODE) {
+      let limit = 8;
+      try {
+        const w = window.innerWidth;
+        if (w < 768) limit = 4; else if (w < 1200) limit = 6; else limit = 8;
+      } catch(_){}
+      const items = window.HOME_TOP4 ? PRODUCTS.slice(0, limit) : PRODUCTS;
+      renderGrid(items);
+    }
+  });
   renderCart();
+
+  // Newsletter y Opiniones eliminados a pedido (sección quitada)
 
   // Delegate open modal from grid
   document.getElementById('productsGrid').addEventListener('click', (e) => {
@@ -320,7 +417,19 @@ document.addEventListener('DOMContentLoaded', () => {
     if (Number.isNaN(index)) return;
     if (action === 'inc') cart[index].quantity += 1;
     if (action === 'dec') cart[index].quantity = Math.max(1, cart[index].quantity - 1);
-    if (action === 'del') cart.splice(index, 1);
+    if (action === 'del') {
+      const removed = cart[index];
+      cart.splice(index, 1);
+      if (window.Swal) {
+        Swal.fire({
+          title: 'Compra cancelada',
+          text: removed ? `${removed.title} eliminado del carrito` : 'Producto eliminado del carrito',
+          icon: 'info',
+          timer: 1400,
+          showConfirmButton: false
+        });
+      }
+    }
     saveCart();
     renderCart();
   });

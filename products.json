@@ -1,0 +1,17 @@
+[
+  {"id":"rem-001","title":"Remera BA Street Blanca","description":"Remera unisex 100% algodón peinado 24/1. Suave y respirable.","price":17990,"category":"remeras","sizes":["S","M","L","XL"],"image":"https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1200&q=60"},
+  {"id":"rem-002","title":"Remera Oversize Negra","description":"Corte oversize, tela pesada premium. Ideal para streetwear.","price":21990,"category":"remeras","sizes":["S","M","L","XL"],"image":"https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?auto=format&fit=crop&w=1200&q=60"},
+  {"id":"rem-003","title":"Remera Logo BA Style","description":"Estampa frontal BA Style en serigrafía premium.","price":19990,"category":"remeras","sizes":["S","M","L","XL"],"image":"https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=60"},
+  {"id":"rem-004","title":"Remera Beige Básica","description":"Corte clásico, tela suave.","price":16990,"category":"remeras","sizes":["S","M","L","XL"],"image":"https://images.unsplash.com/photo-1520975922225-17b5e4baf9a0?auto=format&fit=crop&w=1200&q=60"},
+  {"id":"rem-005","title":"Remera Azul Marino","description":"100% algodón, fit regular.","price":18990,"category":"remeras","sizes":["S","M","L","XL"],"image":"https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=60"},
+
+  {"id":"sho-101","title":"Short Runner Gris","description":"Short deportivo liviano con bolsillos. Secado rápido.","price":14990,"category":"shorts","sizes":["S","M","L"],"image":"https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=1200&q=60"},
+  {"id":"sho-102","title":"Short Cargo Verde","description":"Cargo urbano con múltiples bolsillos y ajuste elástico.","price":23990,"category":"shorts","sizes":["S","M","L","XL"],"image":"https://images.unsplash.com/photo-1520975661595-6453be3f7070?auto=format&fit=crop&w=1200&q=60"},
+  {"id":"sho-103","title":"Short Negro Básico","description":"Microfibra, secado rápido.","price":12990,"category":"shorts","sizes":["S","M","L","XL"],"image":"https://images.unsplash.com/photo-1559566998-0cf6f9a8175b?auto=format&fit=crop&w=1200&q=60"},
+
+  {"id":"pan-201","title":"Pantalón Jogger Negro","description":"Jogger urbano con puño elastizado y ajuste en cintura.","price":28990,"category":"pantalones","sizes":["S","M","L","XL"],"image":"https://images.unsplash.com/photo-1516826957135-700dedea698c?auto=format&fit=crop&w=1200&q=60"},
+  {"id":"pan-202","title":"Pantalón Cargo Arena","description":"Cargo cómodo con bolsillos laterales, ideal para street.","price":31990,"category":"pantalones","sizes":["S","M","L","XL"],"image":"https://images.unsplash.com/photo-1503342217505-b0a15cf70489?auto=format&fit=crop&w=1200&q=60"},
+  {"id":"pan-203","title":"Pantalón Denim Azul","description":"Jean clásico, fit straight.","price":33990,"category":"pantalones","sizes":["S","M","L","XL"],"image":"https://images.unsplash.com/photo-1503342452485-86ff0a4c0f48?auto=format&fit=crop&w=1200&q=60"}
+]
+
+

@@ -13,6 +13,7 @@
 
 body { color: #333; background: var(--cardboard); }
 body.bg-light { background: var(--cardboard) !important; }
+body { overflow-x: hidden; }
 
 .hero-banner { height: 260px; background: #000; }
 .hero-carousel { height: 260px; }
@@ -23,6 +24,7 @@ body.bg-light { background: var(--cardboard) !important; }
 
 .promo-card { border: 1px solid #e0d6c3; background: var(--paper) !important; }
 .benefit-box { border: 1px solid #e0d6c3; background: var(--paper) !important; }
+.bg-white { background: var(--paper) !important; }
 
 /* Category tiles */
 .cat-tile { position: relative; display: block; border-radius: .75rem; overflow: hidden; border: 1px solid var(--ml-gray); }
@@ -70,12 +72,40 @@ body.bg-light { background: var(--cardboard) !important; }
 .navbar-dark .navbar-brand span { color: #fff; font-weight: 800; letter-spacing: .3px; }
 .navbar-dark .nav-link { color: rgba(255,255,255,.92); font-weight: 600; }
 .navbar-dark .nav-link:hover { color: #fff; }
+/* Carrito en blanco dentro del header */
+.navbar-dark .btn-outline-light i,
+.navbar-dark .btn-outline-dark i { color: #fff; }
+.navbar-dark .btn-outline-dark { border-color: rgba(255,255,255,.6); color: #fff; background: rgba(255,255,255,.06); }
+.navbar-dark .btn-outline-dark:hover { background: rgba(255,255,255,.12); }
 
 @media (min-width: 992px) {
   .hero-banner { height: 320px; }
   .hero-carousel { height: 320px; }
   .hero-carousel .carousel-item { height: 320px; }
   .product-thumb { height: 220px; }
+}
+
+/* Mobile-first optimizations */
+@media (max-width: 575.98px) {
+  .navbar .navbar-brand span { font-size: 1.05rem; }
+  .navbar .logo-badge { width: 34px; height: 34px; }
+  .hero-carousel { height: 190px; }
+  .hero-carousel .carousel-item { height: 190px; }
+  .carousel-caption { padding-bottom: .75rem; }
+  .carousel-caption .btn { padding: .35rem .6rem; font-size: .85rem; }
+  .cat-tile img { height: 120px; }
+  .product-thumb { height: 170px; }
+  .offcanvas-end { width: 100% !important; }
+  .site-footer { padding-left: 1rem; padding-right: 1rem; }
+  .navbar .btn-outline-light { border-color: rgba(255,255,255,.6); color: #fff; background: rgba(255,255,255,.06); }
+  .navbar .btn-outline-light:hover { background: rgba(255,255,255,.12); }
+  .navbar .btn-outline-light .badge { font-size: .65rem; }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .hero-carousel { height: 240px; }
+  .hero-carousel .carousel-item { height: 240px; }
+  .product-thumb { height: 200px; }
 }
 
 

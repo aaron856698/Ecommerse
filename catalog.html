@@ -9,6 +9,7 @@
     <link href="assets/css/styles.css" rel="stylesheet">
   </head>
   <body class="bg-light">
+    <script>window.CATALOG_FILTER_MODE = true;</script>
     <header class="shadow-sm bg-ml-yellow">
       <nav class="navbar navbar-expand-lg navbar-dark container-lg py-3">
         <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="index.html">
@@ -37,7 +38,47 @@
         <h1 id="catalogTitle" class="h4 mb-0">Catálogo</h1>
         <div class="text-muted small" id="catalogHint">Seleccioná un producto para ver detalles</div>
       </div>
+      <!-- Filtros y orden -->
+      <div class="row g-2 align-items-end mb-3">
+        <div class="col-6 col-md-3">
+          <label class="form-label small">Categoría</label>
+          <select id="filterCategory" class="form-select">
+            <option value="">Todas</option>
+            <option value="remeras">Remeras</option>
+            <option value="shorts">Shorts</option>
+            <option value="pantalones">Pantalones</option>
+          </select>
+        </div>
+        <div class="col-6 col-md-3">
+          <label class="form-label small">Talle</label>
+          <select id="filterSize" class="form-select">
+            <option value="">Todos</option>
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+            <option>XL</option>
+          </select>
+        </div>
+        <div class="col-6 col-md-3">
+          <label class="form-label small">Ordenar por</label>
+          <select id="sortBy" class="form-select">
+            <option value="recent">Novedades</option>
+            <option value="price_asc">Precio: menor a mayor</option>
+            <option value="price_desc">Precio: mayor a menor</option>
+          </select>
+        </div>
+        <div class="col-6 col-md-3">
+          <label class="form-label small">Rango de precio</label>
+          <div class="input-group">
+            <input id="priceMin" type="number" class="form-control" placeholder="Min">
+            <input id="priceMax" type="number" class="form-control" placeholder="Max">
+          </div>
+        </div>
+      </div>
       <div id="productsGrid" class="row g-3 row-cols-2 row-cols-md-3 row-cols-lg-4"></div>
+      <div class="d-flex justify-content-center my-3">
+        <button id="loadMoreBtn" class="btn btn-outline-primary">Cargar más</button>
+      </div>
     </main>
 
     <!-- Modal y Offcanvas reutilizados -->
@@ -107,26 +148,64 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="assets/js/app.js"></script>
     <script>
-      // Al cargar, filtrar por categoría de la query
-      document.addEventListener('DOMContentLoaded', () => {
+      // Catálogo con filtros + paginación
+      function startCatalog() {
         const params = new URLSearchParams(window.location.search);
         const cat = params.get('cat');
         const title = document.getElementById('catalogTitle');
-        if (cat) {
-          const mapTitle = { remeras: 'Remeras', shorts: 'Shorts', pantalones: 'Pantalones', ofertas: 'Ofertas', novedades: 'Novedades' };
-          title.textContent = `Catálogo: ${mapTitle[cat] || cat}`;
-          // reutilizamos funciones de app.js
-          if (cat === 'ofertas') {
-            renderGrid(PRODUCTS.filter((p) => p.price <= 20000));
-          } else if (cat === 'novedades') {
-            renderGrid([...PRODUCTS].reverse());
-          } else {
-            renderGrid(PRODUCTS.filter((p) => p.category === cat));
-          }
-        } else {
-          renderGrid(PRODUCTS);
+        const mapTitle = { remeras: 'Remeras', shorts: 'Shorts', pantalones: 'Pantalones', ofertas: 'Ofertas', novedades: 'Novedades' };
+        if (cat) title.textContent = `Catálogo: ${mapTitle[cat] || cat}`;
+
+        let current = [];
+        function applyAll() {
+          // base
+          if (cat === 'ofertas') current = PRODUCTS.filter(p => p.price <= 20000);
+          else if (cat === 'novedades') current = [...PRODUCTS].reverse();
+          else if (cat) current = PRODUCTS.filter(p => p.category === cat);
+          else current = [...PRODUCTS];
+
+          // category filter
+          const fcat = document.getElementById('filterCategory').value;
+          if (fcat) current = current.filter(p => p.category === fcat);
+          // size filter
+          const fsize = document.getElementById('filterSize').value;
+          if (fsize) current = current.filter(p => p.sizes?.includes(fsize));
+          // price range
+          const min = Number(document.getElementById('priceMin').value || 0);
+          const max = Number(document.getElementById('priceMax').value || Infinity);
+          current = current.filter(p => p.price >= min && p.price <= max);
+          // sort
+          const sort = document.getElementById('sortBy').value;
+          if (sort === 'price_asc') current.sort((a,b)=>a.price-b.price);
+          if (sort === 'price_desc') current.sort((a,b)=>b.price-a.price);
+          if (sort === 'recent') current = current.reverse();
+          // pagination
+          page = 1; renderPage();
         }
-      });
+
+        let page = 1; const pageSize = 8;
+        function renderPage() {
+          const slice = current.slice(0, page * pageSize);
+          renderGrid(slice);
+          document.getElementById('loadMoreBtn').style.display = slice.length < current.length ? 'inline-block':'none';
+        }
+
+        ['filterCategory','filterSize','sortBy','priceMin','priceMax'].forEach(id=>{
+          document.getElementById(id).addEventListener('change', applyAll);
+          document.getElementById(id).addEventListener('keyup', applyAll);
+        });
+        document.getElementById('loadMoreBtn').addEventListener('click', ()=>{ page++; renderPage(); });
+
+        applyAll();
+        // Si se llega con ?cat=... nos aseguramos de filtrar por esa cat
+        if (cat) {
+          document.getElementById('filterCategory').value = (cat === 'ofertas' || cat === 'novedades') ? '' : cat;
+          applyAll();
+        }
+      }
+
+      if (window.PRODUCTS_READY) startCatalog();
+      else window.addEventListener('productsReady', startCatalog);
     </script>
   </body>
   </html>
