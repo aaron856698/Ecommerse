@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="https://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://stylesba.netlify.app/</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://stylesba.netlify.app/assets/imagenes/BAStyle.png</image:loc>
+      <image:title>BA Style - Logo</image:title>
+      <image:caption>Logo de BA Style - Moda Urbana Argentina</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://stylesba.netlify.app/catalog.html</loc>

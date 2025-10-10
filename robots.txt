@@ -1,4 +1,14 @@
 User-agent: *
 Allow: /
+Disallow: /assets/js/
+Disallow: /assets/css/
+
+# Permitir explícitamente las imágenes para que aparezcan en Google
+Allow: /assets/imagenes/
+
+# Priorizar la indexación de páginas importantes
+Allow: /index.html
+Allow: /catalog.html
+Allow: /promos.html
 
 Sitemap: https://stylesba.netlify.app/sitemap.xml
