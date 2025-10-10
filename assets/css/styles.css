@@ -100,6 +100,19 @@ body { overflow-x: hidden; }
   .navbar .btn-outline-light { border-color: rgba(255,255,255,.6); color: #fff; background: rgba(255,255,255,.06); }
   .navbar .btn-outline-light:hover { background: rgba(255,255,255,.12); }
   .navbar .btn-outline-light .badge { font-size: .65rem; }
+  /* Ajuste para el carrito en móvil */
+  .navbar .ms-auto.d-lg-none {
+    margin-right: 10px;
+  }
+  /* Prevenir scroll horizontal */
+  .container-lg {
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  body {
+    overflow-x: hidden;
+  }
 }
 
 @media (min-width: 576px) and (max-width: 991.98px) {
