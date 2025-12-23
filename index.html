@@ -38,6 +38,9 @@
     <link rel="shortcut icon" type="image/png" href="assets/imagenes/BAStyle.png">
     <link rel="apple-touch-icon" href="assets/imagenes/BAStyle.png">
     
+    <!-- Imagen destacada para buscadores -->
+    <link rel="image_src" href="https://stylesba.netlify.app/assets/imagenes/BAStyle.png">
+    
     <!-- Schema.org markup para Rich Snippets -->
     <script type="application/ld+json">
     [
@@ -50,12 +53,30 @@
           "@type": "ImageObject",
           "url": "https://stylesba.netlify.app/assets/imagenes/BAStyle.png",
           "width": "512",
-          "height": "512"
+          "height": "512",
+          "contentUrl": "https://stylesba.netlify.app/assets/imagenes/BAStyle.png"
         },
+        "image": "https://stylesba.netlify.app/assets/imagenes/BAStyle.png",
         "sameAs": [
           "https://instagram.com/bastyle",
           "https://facebook.com/bastyle"
         ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "BA Style",
+        "url": "https://stylesba.netlify.app/",
+        "image": "https://stylesba.netlify.app/assets/imagenes/BAStyle.png",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://stylesba.netlify.app/assets/imagenes/BAStyle.png"
+        },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://stylesba.netlify.app/?search={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
       },
       {
         "@context": "https://schema.org",
@@ -103,7 +124,9 @@
           "@type": "ImageObject",
           "url": "https://stylesba.netlify.app/assets/imagenes/BAStyle.png",
           "width": "512",
-          "height": "512"
+          "height": "512",
+          "contentUrl": "https://stylesba.netlify.app/assets/imagenes/BAStyle.png",
+          "encodingFormat": "image/png"
         },
         "breadcrumb": {
           "@type": "BreadcrumbList",
