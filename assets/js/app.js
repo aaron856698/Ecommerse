@@ -2,66 +2,129 @@
 let PRODUCTS = [
   {
     id: 'rem-001',
-    title: 'Remera BA Street Blanca',
+    title: 'Remera Blanca',
     description: 'Remera unisex 100% algodón peinado 24/1. Suave y respirable.',
-    price: 17990,
+    price: 8000,
     category: 'remeras',
     sizes: ['S', 'M', 'L', 'XL'],
-    image: 'https://picsum.photos/seed/rem-001/800/600'
+    image: 'assets/imagenes/remera blanca.png'
   },
   {
     id: 'rem-002',
-    title: 'Remera Oversize Negra',
-    description: 'Corte oversize, tela pesada premium. Ideal para streetwear.',
-    price: 21990,
+    title: 'Remera Negra',
+    description: 'Remera unisex 100% algodón peinado 24/1. Suave y respirable.',
+    price: 8000,
     category: 'remeras',
     sizes: ['S', 'M', 'L', 'XL'],
-    image: 'https://picsum.photos/seed/rem-002/800/600'
+    image: 'assets/imagenes/remera negra.png'
   },
   {
     id: 'rem-003',
-    title: 'Remera Logo BA Style',
-    description: 'Estampa frontal BA Style en serigrafía premium.',
-    price: 19990,
+    title: 'Remera Verde Manzana',
+    description: 'Remera unisex 100% algodón peinado 24/1. Suave y respirable.',
+    price: 8000,
     category: 'remeras',
     sizes: ['S', 'M', 'L', 'XL'],
-    image: 'https://picsum.photos/seed/rem-003/800/600'
+    image: 'assets/imagenes/verde manzana.png'
   },
   {
-    id: 'sho-101',
-    title: 'Short Runner Gris',
-    description: 'Short deportivo liviano con bolsillos. Secado rápido.',
-    price: 14990,
-    category: 'shorts',
-    sizes: ['S', 'M', 'L'],
-    image: 'https://picsum.photos/seed/sho-101/800/600'
-  },
-  {
-    id: 'sho-102',
-    title: 'Short Cargo Verde',
-    description: 'Cargo urbano con múltiples bolsillos y ajuste elástico.',
-    price: 23990,
-    category: 'shorts',
+    id: 'rem-004',
+    title: 'Remera Azul Clásico',
+    description: 'Remera unisex 100% algodón peinado 24/1. Suave y respirable.',
+    price: 8000,
+    category: 'remeras',
     sizes: ['S', 'M', 'L', 'XL'],
-    image: 'https://picsum.photos/seed/sho-102/800/600'
+    image: 'assets/imagenes/azul clasico.png'
   },
   {
-    id: 'pan-201',
-    title: 'Pantalón Jogger Negro',
-    description: 'Jogger urbano con puño elastizado y ajuste en cintura.',
-    price: 28990,
-    category: 'pantalones',
+    id: 'rem-005',
+    title: 'Remera Azul Marino',
+    description: 'Remera unisex 100% algodón peinado 24/1. Suave y respirable.',
+    price: 8000,
+    category: 'remeras',
     sizes: ['S', 'M', 'L', 'XL'],
-    image: 'https://picsum.photos/seed/pan-201/800/600'
+    image: 'assets/imagenes/azul marino.png'
   },
   {
-    id: 'pan-202',
-    title: 'Pantalón Cargo Arena',
-    description: 'Cargo cómodo con bolsillos laterales, ideal para street.',
-    price: 31990,
-    category: 'pantalones',
+    id: 'rem-006',
+    title: 'Remera Azul',
+    description: 'Remera unisex 100% algodón peinado 24/1. Suave y respirable.',
+    price: 8000,
+    category: 'remeras',
     sizes: ['S', 'M', 'L', 'XL'],
-    image: 'https://picsum.photos/seed/pan-202/800/600'
+    image: 'assets/imagenes/azul.png'
+  },
+  {
+    id: 'rem-007',
+    title: 'Remera Gris Claro',
+    description: 'Remera unisex 100% algodón peinado 24/1. Suave y respirable.',
+    price: 8000,
+    category: 'remeras',
+    sizes: ['S', 'M', 'L', 'XL'],
+    image: 'assets/imagenes/gris claro.png'
+  },
+  {
+    id: 'rem-008',
+    title: 'Remera Gris Topo',
+    description: 'Remera unisex 100% algodón peinado 24/1. Suave y respirable.',
+    price: 8000,
+    category: 'remeras',
+    sizes: ['S', 'M', 'L', 'XL'],
+    image: 'assets/imagenes/gris topo.png'
+  },
+  {
+    id: 'rem-009',
+    title: 'Remera Verde Manzana',
+    description: 'Remera unisex 100% algodón peinado 24/1. Suave y respirable.',
+    price: 8000,
+    category: 'remeras',
+    sizes: ['S', 'M', 'L', 'XL'],
+    image: 'assets/imagenes/verde manzana.png'
+  },
+  {
+    id: 'gor-001',
+    title: 'Gorra Azul Clásica',
+    description: 'Gorra ajustable, diseño clásico. Ajuste cómodo y duradero.',
+    price: 7500,
+    category: 'gorras',
+    sizes: ['Única'],
+    image: 'assets/gorritas-img/gorra azul clasica.png'
+  },
+  {
+    id: 'gor-002',
+    title: 'Gorra Blanca Trucker',
+    description: 'Gorra trucker estilo clásico. Panel frontal rígido, parte trasera ajustable.',
+    price: 6000,
+    category: 'gorras',
+    sizes: ['Única'],
+    image: 'assets/gorritas-img/gorra blanca.png'
+  },
+  {
+    id: 'gor-003',
+    title: 'Gorra Negra Trucker',
+    description: 'Gorra trucker estilo clásico. Panel frontal rígido, parte trasera ajustable.',
+    price: 6000,
+    category: 'gorras',
+    sizes: ['Única'],
+    image: 'assets/gorritas-img/gorra negra .png'
+  },
+  {
+    id: 'gor-004',
+    title: 'Gorra Roja',
+    description: 'Gorra ajustable, diseño moderno. Ajuste cómodo y duradero.',
+    price: 10000,
+    category: 'gorras',
+    sizes: ['Única'],
+    image: 'assets/gorritas-img/gorra roja.png'
+  },
+  {
+    id: 'gor-005',
+    title: 'Gorra Trucker Azul',
+    description: 'Gorra trucker estilo clásico. Panel frontal rígido, parte trasera ajustable.',
+    price: 6000,
+    category: 'gorras',
+    sizes: ['Única'],
+    image: 'assets/gorritas-img/gorra trucker azul.png'
   }
 ];
 
@@ -98,14 +161,71 @@ function computeSubtotal(items) {
 }
 
 function computeBulkDiscount(items) {
-  const qty = items.reduce((q, it) => q + it.quantity, 0);
-  const subtotal = computeSubtotal(items);
+  // Separar remeras y gorras
+  const remerasItems = items.filter(it => it.id && it.id.startsWith('rem-'));
+  const gorrasItems = items.filter(it => it.id && it.id.startsWith('gor-'));
+  
+  const remerasQty = remerasItems.reduce((q, it) => q + it.quantity, 0);
+  const gorrasQty = gorrasItems.reduce((q, it) => q + it.quantity, 0);
+  
+  const remerasSubtotal = remerasItems.reduce((sum, it) => sum + it.price * it.quantity, 0);
+  const gorrasSubtotal = gorrasItems.reduce((sum, it) => sum + it.price * it.quantity, 0);
+  
   let rate = 0;
   let label = '';
-  if (qty >= 4) { rate = 0.35; label = '35% OFF llevando 4+'; }
-  else if (qty === 3) { rate = 0.25; label = '25% OFF llevando 3'; }
-  else if (qty === 2) { rate = 0.15; label = '15% OFF llevando 2'; }
-  const amount = Math.round(subtotal * rate);
+  let amount = 0;
+  
+  // Descuento para REMERAS (precio fijo)
+  if (remerasQty === 2) {
+    const precioNormal = 16000; // 2 × 8000
+    const precioPromocional = 15000;
+    if (remerasSubtotal >= precioNormal) {
+      amount = precioNormal - precioPromocional; // $1.000
+      rate = 0.0625; // 6.25%
+      label = `6.25% OFF (2 remeras) - Ahorro: $${formatPrice(amount)}`;
+    }
+  } else if (remerasQty === 3) {
+    const precioNormal = 24000; // 3 × 8000
+    const precioPromocional = 21000;
+    if (remerasSubtotal >= precioNormal) {
+      amount = precioNormal - precioPromocional; // $3.000
+      rate = 0.125; // 12.5%
+      label = `12.5% OFF (3 remeras) - Ahorro: $${formatPrice(amount)}`;
+    }
+  }
+  
+  // Descuento para GORRAS (porcentaje por cantidad)
+  let gorrasDiscount = 0;
+  let gorrasLabel = '';
+  
+  if (gorrasQty === 2) {
+    // 2 gorras → 6.25% de descuento
+    gorrasDiscount = gorrasSubtotal * 0.0625;
+    gorrasLabel = `6.25% OFF (2 gorras) - Ahorro: $${formatPrice(gorrasDiscount)}`;
+  } else if (gorrasQty === 3) {
+    // 3 gorras → 12.5% de descuento
+    gorrasDiscount = gorrasSubtotal * 0.125;
+    gorrasLabel = `12.5% OFF (3 gorras) - Ahorro: $${formatPrice(gorrasDiscount)}`;
+  }
+  
+  // Combinar descuentos si hay ambos
+  if (remerasQty > 0 && gorrasQty > 0) {
+    const totalDiscount = amount + gorrasDiscount;
+    const totalSubtotal = remerasSubtotal + gorrasSubtotal;
+    if (totalDiscount > 0) {
+      amount = totalDiscount;
+      rate = amount / totalSubtotal;
+      const porcentaje = Math.round(rate * 100 * 10) / 10;
+      label = `${porcentaje}% OFF (${remerasQty} remera${remerasQty > 1 ? 's' : ''}, ${gorrasQty} gorra${gorrasQty > 1 ? 's' : ''}) - Ahorro: $${formatPrice(amount)}`;
+    }
+  } else if (gorrasQty > 0 && gorrasDiscount > 0) {
+    // Solo gorras con descuento
+    amount = gorrasDiscount;
+    rate = amount / gorrasSubtotal;
+    label = gorrasLabel;
+  }
+  // Si solo hay remeras, el descuento ya está calculado arriba
+  
   return { rate, amount, label };
 }
 
@@ -158,7 +278,7 @@ function renderCart() {
   summary.className = 'cart-summary mb-2';
   summary.innerHTML = `
     <div><b>Subtotal:</b> $${formatPrice(subtotal)}</div>
-    ${discount.amount ? `<div><span class="discount-pill">${discount.label}</span> <b>- $${formatPrice(discount.amount)}</b></div>` : ''}
+    ${discount.amount > 0 ? `<div><span class="discount-pill">${discount.label}</span> <b>- $${formatPrice(discount.amount)}</b></div>` : ''}
   `;
   list.prepend(summary);
   totalEl.textContent = formatPrice(total);
@@ -191,6 +311,11 @@ function buildWhatsappMessage() {
 }
 
 function addToCart(product, size, quantity) {
+  // Si no hay tamaño pero el producto tiene solo un tamaño, usarlo automáticamente
+  if (!size && product && product.sizes && product.sizes.length === 1) {
+    size = product.sizes[0];
+  }
+  
   if (!size) {
     if (window.Swal) {
       Swal.fire({
@@ -219,13 +344,30 @@ function addToCart(product, size, quantity) {
   renderCart();
   if (window.Swal) {
     const d = computeBulkDiscount(cart);
-    const extra = d.amount ? `<br><small>Se aplicó <b>${d.label}</b></small>` : '';
     const totalItems = cart.reduce((acc, it) => acc + it.quantity, 0);
+    const remerasQty = cart.filter(it => it.id && it.id.startsWith('rem-')).reduce((q, it) => q + it.quantity, 0);
+    const gorrasQty = cart.filter(it => it.id && it.id.startsWith('gor-')).reduce((q, it) => q + it.quantity, 0);
+    
+    let extra = '';
+    if (d.amount > 0) {
+      const total = computeSubtotal(cart) - d.amount;
+      extra = `
+        <br><br>
+        <div class="text-center">
+          <div class="small text-muted">Se aplicó descuento:</div>
+          <div class="fw-bold text-success">${d.label}</div>
+          <div class="small mt-2">Total en carrito: <span class="fw-bold">$${formatPrice(total)}</span></div>
+        </div>
+      `;
+    } else {
+      extra = `<br><small>Total en carrito: <b>${totalItems}</b> ítem(s)</small>`;
+    }
+    
     Swal.fire({
       title: 'Agregado al carrito',
-      html: `${product.title} - Talla <b>${size}</b>${extra}<br><small>Total en carrito: <b>${totalItems}</b> ítem(s)</small>`,
+      html: `${product.title} - Talla <b>${size}</b> x${quantity}${extra}`,
       icon: 'success',
-      timer: 1600,
+      timer: 2000,
       showConfirmButton: false
     });
   }
@@ -236,14 +378,12 @@ function createProductCard(product) {
   const col = document.createElement('div');
   col.className = 'col';
   col.innerHTML = `
-    <div class="card product-card h-100">
+    <div class="card product-card h-100 d-flex flex-column">
       <img src="${product.image}" class="card-img-top product-thumb" alt="${product.title}" data-open-modal="${product.id}" onerror="this.onerror=null;this.src='${IMAGE_FALLBACK[product.category]||IMAGE_FALLBACK.default}'">
-      <div class="card-body d-flex flex-column">
-        <h3 class="h6 card-title">${product.title}</h3>
-        <div class="mt-auto">
-          <div class="h5 mb-2">$${formatPrice(product.price)}</div>
-          <button class="btn btn-outline-primary w-100" data-open-modal="${product.id}">Ver detalles</button>
-        </div>
+      <div class="card-body d-flex flex-column flex-grow-0">
+        <h3 class="h6 card-title mb-2">${product.title}</h3>
+        <div class="h5 mb-2">$${formatPrice(product.price)}</div>
+        <button class="btn btn-outline-primary w-100 mt-auto" data-open-modal="${product.id}">Ver detalles</button>
       </div>
     </div>
   `;
@@ -265,22 +405,53 @@ function renderGrid(items) {
 
 function openProductModal(productId) {
   const product = PRODUCTS.find((p) => p.id === productId);
-  if (!product) return;
+  if (!product) {
+    console.error('Producto no encontrado:', productId);
+    return;
+  }
+  
   currentProduct = product;
   selectedSize = null;
-  document.getElementById('modalImage').src = product.image;
-  document.getElementById('modalTitle').textContent = product.title;
-  document.getElementById('modalDescription').textContent = product.description;
-  document.getElementById('modalPrice').textContent = formatPrice(product.price);
-  document.getElementById('qtyInput').value = 1;
-
+  
+  // Verificar que los elementos del modal existan
+  const modalImage = document.getElementById('modalImage');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalDescription = document.getElementById('modalDescription');
+  const modalPrice = document.getElementById('modalPrice');
+  const qtyInput = document.getElementById('qtyInput');
+  const modalDiscount = document.getElementById('modalDiscount');
   const sizesWrap = document.getElementById('modalSizes');
+  
+  if (!modalImage || !modalTitle || !modalDescription || !modalPrice || !qtyInput || !sizesWrap) {
+    console.error('Elementos del modal no encontrados');
+    return;
+  }
+  
+  modalImage.src = product.image;
+  modalTitle.textContent = product.title;
+  modalDescription.textContent = product.description;
+  modalPrice.textContent = formatPrice(product.price);
+  qtyInput.value = 1;
+  if (modalDiscount) modalDiscount.style.display = 'none';
+
   sizesWrap.innerHTML = '';
+  
+  // Si solo hay un tamaño, seleccionarlo automáticamente ANTES de crear los botones
+  if (product.sizes.length === 1) {
+    selectedSize = product.sizes[0];
+  }
+  
   product.sizes.forEach((s) => {
     const btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'btn btn-outline-secondary btn-sm';
     btn.textContent = s;
+    
+    // Si este es el tamaño seleccionado automáticamente, marcarlo como activo
+    if (s === selectedSize) {
+      btn.classList.add('active');
+    }
+    
     btn.addEventListener('click', () => {
       selectedSize = s;
       [...sizesWrap.children].forEach((el) => el.classList.remove('active'));
@@ -289,8 +460,17 @@ function openProductModal(productId) {
     sizesWrap.appendChild(btn);
   });
 
-  const modal = new bootstrap.Modal(document.getElementById('productModal'));
+  const modalElement = document.getElementById('productModal');
+  if (!modalElement) {
+    console.error('Modal no encontrado');
+    return;
+  }
+  
+  const modal = new bootstrap.Modal(modalElement);
   modal.show();
+  
+  // Actualizar precio inicial
+  updateModalPrice();
 
   // Inject Product JSON-LD for SEO
   try {
@@ -316,6 +496,44 @@ function openProductModal(productId) {
     script.textContent = JSON.stringify(data);
     document.body.appendChild(script);
   } catch (_) { /* ignore */ }
+}
+
+function updateModalPrice() {
+  if (!currentProduct) return;
+  
+  const qty = Math.max(1, Number(document.getElementById('qtyInput').value || 1));
+  const priceEl = document.getElementById('modalPrice');
+  const discountEl = document.getElementById('modalDiscount');
+  
+  // Calcular precio total
+  const totalPrice = currentProduct.price * qty;
+  priceEl.textContent = formatPrice(totalPrice);
+  
+  // Verificar si es una remera o gorra y calcular descuento
+  if (currentProduct.id && (currentProduct.id.startsWith('rem-') || currentProduct.id.startsWith('gor-'))) {
+    // Simular carrito temporal para calcular descuento
+    const tempCart = [{
+      id: currentProduct.id,
+      price: currentProduct.price,
+      quantity: qty
+    }];
+    const discount = computeBulkDiscount(tempCart);
+    
+    if (discount.amount > 0) {
+      const finalPrice = totalPrice - discount.amount;
+      discountEl.style.display = 'block';
+      discountEl.innerHTML = `
+        <div class="text-success fw-semibold">
+          <span class="discount-pill">${discount.label}</span>
+        </div>
+        <div class="text-muted small">Precio final: <span class="fw-bold text-dark">$${formatPrice(finalPrice)}</span></div>
+      `;
+    } else {
+      discountEl.style.display = 'none';
+    }
+  } else {
+    discountEl.style.display = 'none';
+  }
 }
 
 // Search and filters
@@ -357,6 +575,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     try { window.PRODUCTS_READY = true; window.dispatchEvent(new Event('productsReady')); } catch(_){}
     if (!window.CATALOG_FILTER_MODE) {
+      // Separar remeras y gorras
+      const remeras = PRODUCTS.filter(p => p.category === 'remeras');
+      const gorras = PRODUCTS.filter(p => p.category === 'gorras');
+      
+      // Renderizar remeras en la sección principal
       let limit = 8;
       try {
         const w = window.innerWidth;
@@ -364,47 +587,143 @@ document.addEventListener('DOMContentLoaded', () => {
         else if (w < 1200) limit = 6;    // tablet
         else limit = 8;                  // desktop
       } catch(_){}
-      const items = window.HOME_TOP4 ? PRODUCTS.slice(0, limit) : PRODUCTS;
-      renderGrid(items);
+      
+      const remerasToShow = window.HOME_TOP4 ? remeras.slice(0, limit) : remeras;
+      renderGrid(remerasToShow);
+      
+      // Mostrar botón "Ver más" solo en móvil si hay más remeras que el límite
+      const verMasBtn = document.getElementById('verMasRemeras');
+      const btnVerMas = document.getElementById('btnVerMasRemeras');
+      if (verMasBtn && btnVerMas && window.HOME_TOP4 && remeras.length > limit) {
+        try {
+          const w = window.innerWidth;
+          if (w < 768) {
+            verMasBtn.style.display = 'block';
+            btnVerMas.addEventListener('click', () => {
+              renderGrid(remeras);
+              verMasBtn.style.display = 'none';
+            });
+          }
+        } catch(_){}
+      }
+      
+      // Renderizar gorras en su sección
+      if (gorras.length > 0) {
+        const gorrasGrid = document.getElementById('gorrasGrid');
+        if (gorrasGrid) {
+          gorrasGrid.innerHTML = '';
+          gorras.forEach((p) => gorrasGrid.appendChild(createProductCard(p)));
+          
+          // Agregar imagen de gorras juntas al final (ocupa espacio de 3 cards)
+          const imageCol = document.createElement('div');
+          imageCol.className = 'col-12 col-md-9 col-lg-9';
+          imageCol.innerHTML = `
+            <div class="card product-card h-100" style="border: 1px solid #dfd3bf; background: var(--paper); padding: 0; margin: 0; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+              <img src="assets/imagenes/gorras juntas.png" alt="Gorras" style="width: 100%; height: 100%; object-fit: contain; display: block; padding: 10px;">
+            </div>
+          `;
+          gorrasGrid.appendChild(imageCol);
+        }
+      }
     }
   }).catch(()=>{
     try { window.PRODUCTS_READY = true; window.dispatchEvent(new Event('productsReady')); } catch(_){}
     if (!window.CATALOG_FILTER_MODE) {
+      // Separar remeras y gorras
+      const remeras = PRODUCTS.filter(p => p.category === 'remeras');
+      const gorras = PRODUCTS.filter(p => p.category === 'gorras');
+      
+      // Renderizar remeras en la sección principal
       let limit = 8;
       try {
         const w = window.innerWidth;
         if (w < 768) limit = 4; else if (w < 1200) limit = 6; else limit = 8;
       } catch(_){}
-      const items = window.HOME_TOP4 ? PRODUCTS.slice(0, limit) : PRODUCTS;
-      renderGrid(items);
+      
+      const remerasToShow = window.HOME_TOP4 ? remeras.slice(0, limit) : remeras;
+      renderGrid(remerasToShow);
+      
+      // Mostrar botón "Ver más" solo en móvil si hay más remeras que el límite
+      const verMasBtn = document.getElementById('verMasRemeras');
+      const btnVerMas = document.getElementById('btnVerMasRemeras');
+      if (verMasBtn && btnVerMas && window.HOME_TOP4 && remeras.length > limit) {
+        try {
+          const w = window.innerWidth;
+          if (w < 768) {
+            verMasBtn.style.display = 'block';
+            btnVerMas.addEventListener('click', () => {
+              renderGrid(remeras);
+              verMasBtn.style.display = 'none';
+            });
+          }
+        } catch(_){}
+      }
+      
+      // Renderizar gorras en su sección
+      if (gorras.length > 0) {
+        const gorrasGrid = document.getElementById('gorrasGrid');
+        if (gorrasGrid) {
+          gorrasGrid.innerHTML = '';
+          gorras.forEach((p) => gorrasGrid.appendChild(createProductCard(p)));
+          
+          // Agregar imagen de gorras juntas al final (ocupa espacio de 3 cards)
+          const imageCol = document.createElement('div');
+          imageCol.className = 'col-12 col-md-9 col-lg-9';
+          imageCol.innerHTML = `
+            <div class="card product-card h-100" style="border: 1px solid #dfd3bf; background: var(--paper); padding: 0; margin: 0; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+              <img src="assets/imagenes/gorras juntas.png" alt="Gorras" style="width: 100%; height: 100%; object-fit: contain; display: block; padding: 10px;">
+            </div>
+          `;
+          gorrasGrid.appendChild(imageCol);
+        }
+      }
     }
   });
   renderCart();
 
   // Newsletter y Opiniones eliminados a pedido (sección quitada)
 
-  // Delegate open modal from grid
-  document.getElementById('productsGrid').addEventListener('click', (e) => {
-    const target = e.target.closest('[data-open-modal]');
-    if (!target) return;
-    const id = target.getAttribute('data-open-modal');
-    openProductModal(id);
-  });
+  // Delegate open modal from any product grid (remeras y gorras)
+  function setupModalDelegate(gridId) {
+    const grid = document.getElementById(gridId);
+    if (grid) {
+      grid.addEventListener('click', (e) => {
+        const target = e.target.closest('[data-open-modal]');
+        if (!target) return;
+        const id = target.getAttribute('data-open-modal');
+        openProductModal(id);
+      });
+    }
+  }
+  
+  setupModalDelegate('productsGrid');
+  setupModalDelegate('gorrasGrid');
 
   // Quantity controls in modal
   document.getElementById('qtyMinus').addEventListener('click', () => {
     const input = document.getElementById('qtyInput');
     const v = Math.max(1, Number(input.value) - 1);
     input.value = v;
+    updateModalPrice();
   });
   document.getElementById('qtyPlus').addEventListener('click', () => {
     const input = document.getElementById('qtyInput');
     input.value = Number(input.value) + 1;
+    updateModalPrice();
+  });
+  
+  // También actualizar cuando cambia el input directamente
+  document.getElementById('qtyInput').addEventListener('input', () => {
+    updateModalPrice();
   });
 
   // Add to cart from modal
   document.getElementById('addToCartBtn').addEventListener('click', () => {
     const qty = Math.max(1, Number(document.getElementById('qtyInput').value || 1));
+    // Si no hay tamaño seleccionado pero el producto tiene solo un tamaño, usarlo
+    if (!selectedSize && currentProduct && currentProduct.sizes && currentProduct.sizes.length === 1) {
+      selectedSize = currentProduct.sizes[0];
+    }
     addToCart(currentProduct, selectedSize, qty);
   });
 
@@ -451,26 +770,31 @@ document.addEventListener('DOMContentLoaded', () => {
   searchInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') applySearch(searchInput.value); });
 
   // Categories
-  document.getElementById('categorias').addEventListener('click', (e) => {
-    const link = e.target.closest('[data-category]');
-    if (!link) return;
-    const cat = link.getAttribute('data-category');
-    // actualizar querystring
-    const url = new URL(window.location.href);
-    url.searchParams.set('cat', cat);
-    history.replaceState(null, '', url.toString());
+  const categoriasEl = document.getElementById('categorias');
+  if (categoriasEl) {
+    categoriasEl.addEventListener('click', (e) => {
+      const link = e.target.closest('[data-category]');
+      if (!link) return;
+      const cat = link.getAttribute('data-category');
+      // actualizar querystring
+      const url = new URL(window.location.href);
+      url.searchParams.set('cat', cat);
+      history.replaceState(null, '', url.toString());
 
-    if (cat === 'ofertas') {
-      renderGrid(PRODUCTS.filter((p) => p.price <= 20000));
-    } else if (cat === 'novedades') {
-      renderGrid([...PRODUCTS].reverse());
-    } else {
-      renderGrid(PRODUCTS.filter((p) => p.category === cat));
-    }
-    // Scroll a grilla
-    const section = document.getElementById('mas-vendidos');
-    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  });
+      if (cat === 'ofertas') {
+        renderGrid(PRODUCTS.filter((p) => p.price <= 20000));
+      } else if (cat === 'novedades') {
+        renderGrid([...PRODUCTS].reverse());
+      } else {
+        renderGrid(PRODUCTS.filter((p) => p.category === cat));
+      }
+      // Scroll a grilla
+      const section = document.getElementById('mas-vendidos');
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  }
 
   // aplicar filtro inicial por querystring
   const params = new URLSearchParams(window.location.search);

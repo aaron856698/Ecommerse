@@ -206,40 +206,6 @@
       </div>
     </section>
 
-    <!-- Categorías -->
-    <section id="categorias" class="container-lg mt-5">
-      <div class="d-flex align-items-center justify-content-between mb-3">
-        <h2 class="h5 mb-0">Nuestras categorías</h2>
-        <a href="#" class="text-decoration-none">Ver todas</a>
-      </div>
-      <div class="row g-3 row-cols-2 row-cols-md-4">
-        <div class="col">
-          <a class="cat-tile" href="catalog.html?cat=remeras" data-category="remeras">
-            <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=600&q=60" alt="Remeras">
-            <span>Remeras</span>
-          </a>
-        </div>
-        <div class="col">
-          <a class="cat-tile" href="catalog.html?cat=shorts" data-category="shorts">
-            <img src="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=600&auto=format&fit=crop" alt="Shorts">
-            <span>Shorts</span>
-          </a>
-        </div>
-        <div class="col">
-          <a class="cat-tile" href="catalog.html?cat=ofertas" data-category="ofertas">
-            <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=600&auto=format&fit=crop" alt="Ofertas">
-            <span>Ofertas</span>
-          </a>
-        </div>
-        <div class="col">
-          <a class="cat-tile" href="novedades.html" data-category="novedades">
-            <img src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?q=80&w=600&auto=format&fit=crop" alt="Novedades">
-            <span>Novedades</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
     <!-- Más vendidos / Productos -->
     <section id="mas-vendidos" class="container-lg mt-5">
       <div class="d-flex align-items-center justify-content-between mb-3">
@@ -247,6 +213,20 @@
         <div class="small text-muted">Click en la imagen para ver detalles</div>
       </div>
       <div id="productsGrid" class="row g-3 row-cols-2 row-cols-md-3 row-cols-lg-4">
+        <!-- Cards generadas por JS -->
+      </div>
+      <div id="verMasRemeras" class="text-center mt-3 d-md-none" style="display: none;">
+        <button class="btn btn-outline-primary" id="btnVerMasRemeras">Ver más remeras</button>
+      </div>
+    </section>
+
+    <!-- Gorras -->
+    <section id="gorras" class="container-lg mt-5">
+      <div class="d-flex align-items-center justify-content-between mb-3">
+        <h2 class="h5 mb-0">Gorras</h2>
+        <div class="small text-muted">Click en la imagen para ver detalles</div>
+      </div>
+      <div id="gorrasGrid" class="row g-3 row-cols-2 row-cols-md-3 row-cols-lg-4">
         <!-- Cards generadas por JS -->
       </div>
     </section>
@@ -390,6 +370,7 @@
                   <div>
                     <div class="small text-muted">Precio</div>
                     <div class="h4 mb-0">$<span id="modalPrice">0</span></div>
+                    <div id="modalDiscount" class="small text-success mt-1" style="display:none;"></div>
                   </div>
                   <div class="ms-auto d-flex align-items-center gap-2">
                     <button class="btn btn-outline-secondary" id="qtyMinus" type="button" aria-label="Restar">-</button>
@@ -439,7 +420,7 @@
     <script>
       // Promo rotator & scroll to top
       const promos = [
-        'Llevando 2: 15% OFF · 3: 25% · 4+: 35%',
+        '1 unidad: 0% · 2 unidades: 6,25% OFF · 3 unidades: 12,5% OFF',
         'Punto de encuentro: La Plata y alrededores',
         'Transferencia/Efectivo · Consultas por WhatsApp'
       ];
