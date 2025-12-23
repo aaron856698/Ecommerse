@@ -217,8 +217,12 @@ body { overflow-x: hidden; }
 @media (max-width: 575.98px) {
   .navbar .navbar-brand span { font-size: 1.05rem; }
   .navbar .logo-badge { width: 34px; height: 34px; }
-  .hero-carousel { height: 190px; }
-  .hero-carousel .carousel-item { height: 190px; }
+  .hero-carousel {
+    height: 230px;
+  }
+  .hero-carousel .carousel-item {
+    height: 100%;
+  }
   .carousel-caption { padding-bottom: .75rem; }
   .carousel-caption .btn { padding: .35rem .6rem; font-size: .85rem; }
   .cat-tile img { height: 120px; }
