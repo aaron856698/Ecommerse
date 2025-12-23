@@ -16,9 +16,19 @@ body.bg-light { background: var(--cardboard) !important; }
 body { overflow-x: hidden; }
 
 .hero-banner { height: 260px; background: #000; }
-.hero-carousel { height: 260px; }
-.hero-carousel .carousel-item { height: 260px; }
-.hero-carousel img { height: 100%; }
+/* Carrusel principal: mostrar las imágenes completas sin cortarlas */
+.hero-carousel {
+  height: 260px;
+}
+.hero-carousel .carousel-item {
+  height: 100%;
+}
+.hero-carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* muestra la imagen completa, aunque deje bordes arriba/abajo */
+  background-color: #f5e9d3; /* mismo tono del fondo para que se integre bien */
+}
 .object-fit-cover { object-fit: cover; }
 .bg-gradient-dark { background: linear-gradient(180deg, rgba(0,0,0,0) 20%, rgba(0,0,0,.6) 100%); }
 
@@ -66,6 +76,121 @@ body { overflow-x: hidden; }
 .whatsapp-fab { position: fixed; right: 18px; bottom: 18px; width: 56px; height: 56px; border-radius: 50%; background: #25D366; color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 1.6rem; box-shadow: 0 6px 16px rgba(0,0,0,.2); z-index: 1040; text-decoration: none; }
 .whatsapp-fab:hover { color: #fff; filter: brightness(0.95); }
 
+/* Puntos de entrega */
+.delivery-section {
+  background: rgba(245, 233, 211, 0.7);
+  border-radius: 1rem;
+  padding: 1.5rem 1.75rem;
+}
+.delivery-card {
+  background: var(--paper);
+  border-radius: 1rem;
+  border: 1px solid #e0d6c3;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,.06);
+}
+.delivery-icon-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  background: var(--brand-blue);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  box-shadow: 0 6px 14px rgba(23,59,92,.35);
+}
+.delivery-list {
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 8px 22px rgba(0,0,0,.08);
+}
+.delivery-item {
+  border-color: #e0d6c3;
+  background: #fff;
+  transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease;
+}
+.delivery-item:hover {
+  background: #fdf7eb;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0,0,0,.08);
+}
+.delivery-link {
+  color: inherit;
+  text-decoration: none;
+}
+.delivery-link:hover {
+  color: var(--brand-blue-dark);
+  text-decoration: underline;
+}
+.delivery-bullet {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: rgba(31, 78, 121, 0.09);
+  color: var(--brand-blue-dark);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-in-up {
+  opacity: 0;
+  animation: fadeInUp .35s ease forwards;
+}
+
+.delivery-tip {
+  border-color: #e0d6c3;
+  background: linear-gradient(135deg, #fdf7eb, #f5e9d3);
+}
+
+/* Medios de pago */
+.payment-section {
+  background: rgba(245, 233, 211, 0.7);
+  border-radius: 1rem;
+  padding: 1.5rem 1.75rem;
+  margin-top: 1.5rem;
+}
+.payment-icon-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  background: var(--brand-blue);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  box-shadow: 0 6px 14px rgba(23,59,92,.35);
+}
+.payment-card {
+  background: #fff;
+  border-radius: 1rem;
+  border: 1px solid #e0d6c3;
+  padding: 1rem 1.1rem;
+  box-shadow: 0 6px 16px rgba(0,0,0,.06);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.payment-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0,0,0,.1);
+}
+.payment-logo {
+  height: 22px;
+  width: auto;
+}
+
 /* Utilities */
 .badge { font-weight: 600; }
 .btn.active { background-color: #212529; color: #fff; }
@@ -84,7 +209,7 @@ body { overflow-x: hidden; }
 @media (min-width: 992px) {
   .hero-banner { height: 320px; }
   .hero-carousel { height: 320px; }
-  .hero-carousel .carousel-item { height: 320px; }
+  .hero-carousel .carousel-item { height: 100%; }
   .product-thumb { height: 320px; }
 }
 
@@ -120,7 +245,7 @@ body { overflow-x: hidden; }
 
 @media (min-width: 576px) and (max-width: 991.98px) {
   .hero-carousel { height: 240px; }
-  .hero-carousel .carousel-item { height: 240px; }
+  .hero-carousel .carousel-item { height: 100%; }
   .product-thumb { height: 280px; }
 }
 
