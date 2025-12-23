@@ -129,7 +129,7 @@ let PRODUCTS = [
 ];
 
 // Config
-const WHATSAPP_PHONE = '5491112345678'; // Reemplazar por tu número
+const WHATSAPP_PHONE = '5492215649078'; // Reemplazar por tu número
 
 // State
 let cart = loadCart();
