@@ -1,0 +1,23 @@
+{
+  "name": "BA Style - Moda Urbana Argentina",
+  "short_name": "BA Style",
+  "description": "Tienda de moda urbana en La Plata. Remeras, shorts y pantalones de calidad al mejor precio.",
+  "icons": [
+    {
+      "src": "/assets/imagenes/BAStyle.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/imagenes/BAStyle.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#173b5c",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "/",
+  "scope": "/"
+}
+
