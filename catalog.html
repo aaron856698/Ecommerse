@@ -52,6 +52,7 @@
             <option value="">Todas</option>
             <option value="remeras">Remeras</option>
             <option value="gorras">Gorras</option>
+            <option value="mochilas">Mochilas</option>
             <option value="shorts">Shorts</option>
             <option value="pantalones">Pantalones</option>
           </select>
@@ -160,7 +161,7 @@
         const params = new URLSearchParams(window.location.search);
         const cat = params.get('cat');
         const title = document.getElementById('catalogTitle');
-        const mapTitle = { remeras: 'Remeras', gorras: 'Gorras', shorts: 'Shorts', pantalones: 'Pantalones', ofertas: 'Ofertas', novedades: 'Novedades' };
+        const mapTitle = { remeras: 'Remeras', gorras: 'Gorras', mochilas: 'Mochilas', shorts: 'Shorts', pantalones: 'Pantalones', ofertas: 'Ofertas', novedades: 'Novedades' };
         if (cat) title.textContent = `Catálogo: ${mapTitle[cat] || cat}`;
 
         let current = [];

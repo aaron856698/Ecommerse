@@ -125,6 +125,60 @@ let PRODUCTS = [
     category: 'gorras',
     sizes: ['Única'],
     image: 'assets/gorritas-img/gorra trucker azul.png'
+  },
+  {
+    id: 'moc-adu-001',
+    title: 'Mochila Adidas Adulto',
+    description: 'Mochila para adulto con cartuchera incluida.',
+    price: 14000,
+    category: 'mochilas',
+    sizes: ['Única'],
+    image: 'mochila-adultos/adidas.png'
+  },
+  {
+    id: 'moc-adu-002',
+    title: 'Mochila Adidas Classic Adulto',
+    description: 'Mochila para adulto con cartuchera incluida, estilo clásico.',
+    price: 14000,
+    category: 'mochilas',
+    sizes: ['Única'],
+    image: 'mochila-adultos/adidas2.png'
+  },
+  {
+    id: 'moc-adu-003',
+    title: 'Mochila Jordan Adulto',
+    description: 'Mochila para adulto con cartuchera incluida, diseño Jordan.',
+    price: 14000,
+    category: 'mochilas',
+    sizes: ['Única'],
+    image: 'mochila-adultos/jordan.png'
+  },
+  {
+    id: 'moc-kid-001',
+    title: 'Mochila Dragon Ball Niño',
+    description: 'Mochila infantil con diseño de Dragon Ball.',
+    price: 14000,
+    category: 'mochilas',
+    sizes: ['Única'],
+    image: 'mochila-niños/dragon-ball.png'
+  },
+  {
+    id: 'moc-kid-002',
+    title: 'Mochila Goku Niño',
+    description: 'Mochila infantil con diseño de Goku.',
+    price: 14000,
+    category: 'mochilas',
+    sizes: ['Única'],
+    image: 'mochila-niños/goku.png'
+  },
+  {
+    id: 'moc-kid-003',
+    title: 'Mochila Kitty Niña',
+    description: 'Mochila infantil con diseño de Kitty.',
+    price: 14000,
+    category: 'mochilas',
+    sizes: ['Única'],
+    image: 'mochila-niños/kity.png'
   }
 ];
 
@@ -145,6 +199,7 @@ const IMAGE_FALLBACK = {
   remeras: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1200&q=60',
   shorts: 'https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=1200&q=60',
   pantalones: 'https://images.unsplash.com/photo-1516826957135-700dedea698c?auto=format&fit=crop&w=1200&q=60',
+   mochilas: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=60',
   default: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1200&q=60'
 };
 
@@ -554,6 +609,10 @@ function applySearch(term) {
     window.location.href = 'catalog.html?cat=pantalones';
     return;
   }
+  if (/(^|\s)(mochila|mochilas)(\s|$)/.test(t)) {
+    window.location.href = 'catalog.html?cat=mochilas';
+    return;
+  }
   if (/(^|\s)(oferta|ofertas)(\s|$)/.test(t)) {
     window.location.href = 'catalog.html?cat=ofertas';
     return;
@@ -575,11 +634,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     try { window.PRODUCTS_READY = true; window.dispatchEvent(new Event('productsReady')); } catch(_){}
     if (!window.CATALOG_FILTER_MODE) {
-      // Separar remeras y gorras
       const remeras = PRODUCTS.filter(p => p.category === 'remeras');
       const gorras = PRODUCTS.filter(p => p.category === 'gorras');
+      const mochilas = PRODUCTS.filter(p => p.category === 'mochilas');
       
-      // Renderizar remeras en la sección principal
       let limit = 8;
       try {
         const w = window.innerWidth;
@@ -607,7 +665,6 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch(_){}
       }
       
-      // Renderizar gorras en su sección
       if (gorras.length > 0) {
         const gorrasGrid = document.getElementById('gorrasGrid');
         if (gorrasGrid) {
@@ -625,15 +682,21 @@ document.addEventListener('DOMContentLoaded', () => {
           gorrasGrid.appendChild(imageCol);
         }
       }
+      if (mochilas.length > 0) {
+        const mochilasGrid = document.getElementById('mochilasGrid');
+        if (mochilasGrid) {
+          mochilasGrid.innerHTML = '';
+          mochilas.forEach((p) => mochilasGrid.appendChild(createProductCard(p)));
+        }
+      }
     }
   }).catch(()=>{
     try { window.PRODUCTS_READY = true; window.dispatchEvent(new Event('productsReady')); } catch(_){}
     if (!window.CATALOG_FILTER_MODE) {
-      // Separar remeras y gorras
       const remeras = PRODUCTS.filter(p => p.category === 'remeras');
       const gorras = PRODUCTS.filter(p => p.category === 'gorras');
+      const mochilas = PRODUCTS.filter(p => p.category === 'mochilas');
       
-      // Renderizar remeras en la sección principal
       let limit = 8;
       try {
         const w = window.innerWidth;
@@ -659,7 +722,6 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch(_){}
       }
       
-      // Renderizar gorras en su sección
       if (gorras.length > 0) {
         const gorrasGrid = document.getElementById('gorrasGrid');
         if (gorrasGrid) {
@@ -675,6 +737,13 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
           `;
           gorrasGrid.appendChild(imageCol);
+        }
+      }
+      if (mochilas.length > 0) {
+        const mochilasGrid = document.getElementById('mochilasGrid');
+        if (mochilasGrid) {
+          mochilasGrid.innerHTML = '';
+          mochilas.forEach((p) => mochilasGrid.appendChild(createProductCard(p)));
         }
       }
     }
@@ -698,6 +767,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   setupModalDelegate('productsGrid');
   setupModalDelegate('gorrasGrid');
+  setupModalDelegate('mochilasGrid');
 
   // Quantity controls in modal
   document.getElementById('qtyMinus').addEventListener('click', () => {

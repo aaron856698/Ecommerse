@@ -12,7 +12,13 @@
   {"id":"gor-002","title":"Gorra Blanca Trucker","description":"Gorra trucker estilo clásico. Panel frontal rígido, parte trasera ajustable.","price":6000,"category":"gorras","sizes":["Única"],"image":"assets/gorritas-img/gorra blanca.png"},
   {"id":"gor-003","title":"Gorra Negra Trucker","description":"Gorra trucker estilo clásico. Panel frontal rígido, parte trasera ajustable.","price":6000,"category":"gorras","sizes":["Única"],"image":"assets/gorritas-img/gorra negra .png"},
   {"id":"gor-004","title":"Gorra Roja","description":"Gorra ajustable, diseño moderno. Ajuste cómodo y duradero.","price":10000,"category":"gorras","sizes":["Única"],"image":"assets/gorritas-img/gorra roja.png"},
-  {"id":"gor-005","title":"Gorra Trucker Azul","description":"Gorra trucker estilo clásico. Panel frontal rígido, parte trasera ajustable.","price":6000,"category":"gorras","sizes":["Única"],"image":"assets/gorritas-img/gorra trucker azul.png"}
+  {"id":"gor-005","title":"Gorra Trucker Azul","description":"Gorra trucker estilo clásico. Panel frontal rígido, parte trasera ajustable.","price":6000,"category":"gorras","sizes":["Única"],"image":"assets/gorritas-img/gorra trucker azul.png"},
+  {"id":"moc-adu-001","title":"Mochila Adidas Adulto","description":"Mochila para adulto con cartuchera incluida.","price":14000,"category":"mochilas","sizes":["Única"],"image":"mochila-adultos/adidas.png"},
+  {"id":"moc-adu-002","title":"Mochila Adidas Classic Adulto","description":"Mochila para adulto con cartuchera incluida, estilo clásico.","price":14000,"category":"mochilas","sizes":["Única"],"image":"mochila-adultos/adidas2.png"},
+  {"id":"moc-adu-003","title":"Mochila Jordan Adulto","description":"Mochila para adulto con cartuchera incluida, diseño Jordan.","price":14000,"category":"mochilas","sizes":["Única"],"image":"mochila-adultos/jordan.png"},
+  {"id":"moc-kid-001","title":"Mochila Dragon Ball Niño","description":"Mochila infantil con diseño de Dragon Ball.","price":14000,"category":"mochilas","sizes":["Única"],"image":"mochila-niños/dragon-ball.png"},
+  {"id":"moc-kid-002","title":"Mochila Goku Niño","description":"Mochila infantil con diseño de Goku.","price":14000,"category":"mochilas","sizes":["Única"],"image":"mochila-niños/goku.png"},
+  {"id":"moc-kid-003","title":"Mochila Kitty Niña","description":"Mochila infantil con diseño de Kitty.","price":14000,"category":"mochilas","sizes":["Única"],"image":"mochila-niños/kity.png"}
 ]
 
 
